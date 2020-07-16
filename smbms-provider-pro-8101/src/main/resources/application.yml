@@ -1,0 +1,61 @@
+server:
+  port: 8101
+
+#注册到Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    prefer-ip-address: true #暴露id
+    instance-id: smbms-provider-pro-8101 #注册别名
+#Spring相关：数据源等等
+spring:
+  application:
+    name: smbms-provider-pro #服务名
+  datasource:
+    password: zhj123
+    url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
+    username: root
+    driver-class-name: org.gjt.mm.mysql.Driver #这是mysql连接
+    type: com.alibaba.druid.pool.DruidDataSource #使用的是Druid数据源
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+      #mysql数据库验证
+      test-while-idle: false
+      validation-query: SELECT 1
+      validation-query-timeout: 10
+
+#Mybatis
+mybatis:
+  mapper-locations:  #mapper.xml所在路径
+    - classpath:mybatis/mappers/**/*.xml
+  type-aliases-package: com.codeman.smbms.entity #别名
+  config-location: classpath:mybatis/mybatis.cfg.xml #mybatis配置文件
+
+#set application info
+info:
+  app.name: smbms-provider-user
+  company.name: www.codeman.com
+  build.artifactId: @project.artifactId@
+  build.version: $project.version$
+
+
+logging:
+  level:
+    com:
+      codeman:
+        smbms:
+          mapper:
+            ProviderMapper: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"

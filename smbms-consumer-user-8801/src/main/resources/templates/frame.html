@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>超市订单管理系统</title>
+</head>
+<body>
+    <!--头部-->
+    <div th:replace="commons/bar::topbar(${session.userSession.getUserName()})">
+    </div>
+    <section  class="publicMian2">
+        <div class="right">
+            <img class="wColck" th:src="@{/images/clock.jpg}" alt=""/>
+            <div class="wFont">
+                <h2 th:text="${session.userSession.userName}"></h2>
+                <p>欢迎来到超市订单管理系统!</p>
+            </div>
+        </div>
+    </section>
+<div th:replace="commons/bar::footbar">
+</div>
+</body>
+</html>

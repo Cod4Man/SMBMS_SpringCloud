@@ -1,0 +1,30 @@
+#端口server:
+server:
+ port: 8811
+
+#服务熔断
+feign:
+  hystrix:
+    enabled: true
+
+#发现eureka
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+#关闭严格的HTML5检查
+
+
+#LOGGING
+logging:
+  level:
+    com:
+      codeman:
+        smbms: debug
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+  application:
+    name: consumer-pro

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/smbms-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-consumer-bill-8821" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-consumer-pro-8811" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-consumer-role-8811" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-consumer-user-8801" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-dependencies" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-eureka-7001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-provider-bill-8201" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-provider-pro-8101" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-provider-role-8101" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-provider-user-8001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smbms-zuul-9527" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>供应商页面</title>
+</head>
+<body>
+<!--引入topbar-->
+<div th:replace="commons/bar::topbar(${session.userSession.getUserName()})"></div>
+<section class="publicMian2">
+<div class="right">
+    <div class="location">
+        <strong>你现在所在的位置是:</strong>
+        <span>供应商管理页面 >> 信息查看</span>
+    </div>
+    <div class="providerView">
+        <p><strong>供应商编码：</strong><span th:text="${provider.proCode }"></span></p>
+        <p><strong>供应商名称：</strong><span th:text="${provider.proName }"></span></p>
+        <p><strong>联系人：</strong><span th:text="${provider.proContact }"></span></p>
+        <p><strong>联系电话：</strong><span th:text="${provider.proPhone }"></span></p>
+        <p><strong>传真：</strong><span th:text="${provider.proFax }"></span></p>
+        <p><strong>描述：</strong><span th:text="${provider.proDesc}"></span></p>
+        <div class="providerAddBtn">
+            <input type="button" id="back" name="back" value="返回" >
+        </div>
+    </div>
+</div>
+</section>
+<!--引入footbar-->
+<div th:replace="commons/bar::footbar"></div>
+</body>
+<script type="text/javascript" th:src="@{/js/providerview.js}"></script>
+</html>

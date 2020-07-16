@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>供应商页面</title>
+</head>
+<body>
+<!--引入topbar-->
+<div th:replace="commons/bar::topbar(${#httpSession.id})"></div>
+<section class="publicMian2">
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>供应商管理页面</span>
+        </div>
+        <div class="search">
+            <form method="get" th:action="@{/comsumer_pro/query}">
+                <span>供应商编码：</span>
+                <input name="queryProCode" type="text" th:value="${queryProCode }">
+
+                <span>供应商名称：</span>
+                <input name="queryProName" type="text" th:value="${queryProName }">
+
+                <input value="查 询" type="submit" id="searchbutton">
+                <a th:href="@{/consumer_pro/goProviderAdd}">添加供应商</a>
+            </form>
+        </div>
+        <!--供应商操作表格-->
+        <table class="providerTable" cellpadding="0" cellspacing="0">
+            <tr class="firstTr">
+                <th width="10%">供应商编码</th>
+                <th width="20%">供应商名称</th>
+                <th width="10%">联系人</th>
+                <th width="10%">联系电话</th>
+                <th width="10%">传真</th>
+                <th width="10%">创建时间</th>
+                <th width="30%">操作</th>
+            </tr>
+                <tr th:each="provider,status:${providerList }">
+                    <td>
+                        <span th:text="${provider.proCode}"></span>
+                    </td>
+                    <td>
+                        <span th:text="${provider.proName }"></span>
+                    </td>
+                    <td>
+                        <span th:text="${provider.proContact }"></span>
+                    </td>
+                    <td>
+                        <span th:text="${provider.proPhone }"></span>
+                    </td>
+                    <td>
+                        <span th:text="${provider.proFax }"></span>
+                    </td>
+                    <td>
+                        <span th:text="${#dates.format(provider.creationDate,'yyyy-MM-dd')}">
+                        </span>
+                    </td>
+                    <td>
+                        <span><a class="viewProvider" href="javascript:;" th:attr="proid=${provider.id },proname=${provider.proName }"><img th:src="@{http://zuul.com:9527/smbms/user/images/read.png}" alt="查看" title="查看"/></a></span>
+                        <span><a class="modifyProvider" href="javascript:;" th:attr="proid=${provider.id },proname=${provider.proName }"><img th:src="@{http://zuul.com:9527/smbms/user/images/xiugai.png}" alt="修改" title="修改"/></a></span>
+                        <span><a class="deleteProvider" href="javascript:;" th:attr="proid=${provider.id },proname=${provider.proName }"><img th:src="@{http://zuul.com:9527/smbms/user/images/schu.png}" alt="删除" title="删除"/></a></span>
+                    </td>
+                </tr>
+        </table>
+
+    </div>
+</section>
+
+<!--点击删除按钮后弹出的页面-->
+<div class="zhezhao"></div>
+<div class="remove" id="removeProv">
+    <div class="removerChid">
+        <h2>提示</h2>
+        <div class="removeMain" >
+            <p>你确定要删除该供应商吗？</p>
+            <a href="#" id="yes">确定</a>
+            <a href="#" id="no">取消</a>
+        </div>
+    </div>
+</div>
+<!--引入footbar-->
+<div th:replace="commons/bar::footbar"></div>
+</body>
+<script type="text/javascript" th:src="@{/js/providerlist.js}"></script>
+</html>

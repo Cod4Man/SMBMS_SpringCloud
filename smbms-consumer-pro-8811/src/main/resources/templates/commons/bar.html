@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>公共部分</title>
+</head>
+<body>
+<!--topbar-->
+<acds th:fragment="topbar(userName)">
+    <link type="text/css" rel="stylesheet" th:href="@{http://user.smbms.com:8801/css/style.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{http://user.smbms.com:8801/css/public.css}" />
+    <header class="publicHeader">
+        <h1>超市订单管理系统</h1>
+        <div class="publicHeaderR">
+            <p><span>晚上好！</span><span style="color: #fff21b" th:text="${userName}"> </span> , 欢迎你！</p>
+            <a th:href="@{http://user.smbms.com:8801/consumer/login/logout}">退出</a>
+        </div>
+    </header>
+    <!--时间-->
+    <section class="publicTime">
+        <span id="time"><input type="time"/></span>
+        <a href="#">温馨提示：为了能正常浏览，请使用高版本浏览器！（IE10+）</a>
+    </section>
+    <!--主体内容-->
+    <section class="publicMian ">
+        <div class="left">
+            <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+            <nav>
+                <ul class="list" >
+                    <li ><a th:href="@{http://bill.smbms.com:8821/consumer_bill/query}">订单管理</a></li>
+                    <li><a th:href="@{http://provider.smbms.com:8811/consumer_pro/query}">供应商管理</a></li>
+                    <li><a th:href="@{http://user.smbms.com:8801/consumer/query}">用户管理</a></li>
+                    <li><a th:href="@{http://user.smbms.com:8801/consumer/goPwdmodify}">密码修改</a></li>
+                    <li><a th:href="@{http://user.smbms.com:8801/consumer/login/logout}">退出系统</a></li>
+                </ul>
+            </nav>
+        </div>
+        <input type="hidden" id="path" name="path" th:value="${#httpServletRequest.getContextPath()}"/>
+        <input type="hidden" id="referer" name="referer" th:value="${#httpServletRequest.getHeader('Referer')}"/>
+    </section>
+</acds>
+
+<acds th:fragment="footbar">
+    <footer class="footer">
+        版权归北大青鸟
+    </footer>
+    <script type="text/javascript" rel="stylesheet" th:src="@{http://user.smbms.com:8801/js/time.js}"></script>
+    <script type="text/javascript" rel="stylesheet" th:src="@{http://user.smbms.com:8801/js/jquery-1.8.3.min.js}"></script>
+    <script type="text/javascript" rel="stylesheet" th:src="@{http://user.smbms.com:8801/js/common.js}"></script>
+    <script type="text/javascript" rel="stylesheet" th:src="@{http://user.smbms.com:8801/calendar/WdatePicker.js}"></script>
+</acds>
+
+
+<!--分页-->
+<acds th:fragment="pagetool(totalCount,currentPageNo,totalPageCount)">
+    <div class="page-bar">
+        <ul class="page-num-ul clearfix">
+            <li th:inline="text">共[[${totalCount}]]条记录&nbsp;&nbsp; [[${currentPageNo}]]/[[${totalPageCount }]]页</li>
+                <a href="javascript:page_nav(document.forms[0],1);" th:if="${currentPageNo > 1}">首页</a>
+                <a th:href="@{'javascript:page_nav(document.forms[0],' + ${currentPageNo-1} + ');'}" th:if="${currentPageNo > 1}">上一页</a>
+                <a th:href="@{'javascript:page_nav(document.forms[0],' + ${currentPageNo+1 } + ');'}" th:if="${currentPageNo < totalPageCount}">下一页</a>
+                <a th:href="@{'javascript:page_nav(document.forms[0],' + ${totalPageCount } + ');'}" th:if="${currentPageNo < totalPageCount}">最后一页</a>
+            &nbsp;&nbsp;
+        </ul>
+        <span class="page-go-form"><label>跳转至</label>
+	     <input type="text" name="inputPage" id="inputPage" class="page-key" />页
+	     <button type="button" class="page-btn" onClick="jump_to(document.forms[0],document.getElementById('inputPage').value)">GO</button>
+		</span>
+    </div>
+<script type="text/javascript" th:src="@{http://user.smbms.com:8801/js/rollpage.js}"></script>
+</acds>
+</body>
+</html>

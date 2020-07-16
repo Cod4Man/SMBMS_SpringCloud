@@ -1,0 +1,68 @@
+#服务配置
+server:
+  port: 8101
+
+#Mybatis配置
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml #mybatis配置文件
+  mapper-locations:
+    - classpath:mybatis/mappers/**/*.xml    #xml映射
+  type-aliases-package: com.codeman.smbms.entity #entity别名
+
+#spring配置
+spring:
+  application:
+    name:  smbms-provider-role
+  datasource:
+    driver-class-name: org.gjt.mm.mysql.Driver #mysql连接
+    type: com.alibaba.druid.pool.DruidDataSource #druid数据源
+    url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false             # 数据库名称
+    username: root
+    password: zhj123
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+        #mysql数据库验证
+#      test-while-idle: false
+#      validation-query: SELECT 1
+#      validation-query-timeout: 10
+      #    tomcat:
+      #      test-on-borrow: false
+      #      test-while-idle: false
+      #      test-on-return: false
+      #      validation-query: SELECT 1
+
+
+
+
+
+
+#将服务注册到eureka上
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+#  instance:
+#    instance-id: smbms-provider-role-8101
+#    prefer-ip-address: true #可以显示出ip
+#
+##服务器的info信息
+#
+#
+##set application info
+#info:
+#  app.name: smbms-provider-role
+#  company.name: www.codeman.com
+#  build.artifactId: $project.artifactId$
+#  build.version: $project.version$
+
+
+logging:
+  level:
+    com:
+      codeman:
+        smbms:
+          mapper:
+            RoleMapper: debug

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/smbms-api/smbms-api.iml" filepath="$PROJECT_DIR$/smbms-api/smbms-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-consumer-bill-8821/smbms-consumer-bill-8821.iml" filepath="$PROJECT_DIR$/smbms-consumer-bill-8821/smbms-consumer-bill-8821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-consumer-pro-8811/smbms-consumer-pro-8811.iml" filepath="$PROJECT_DIR$/smbms-consumer-pro-8811/smbms-consumer-pro-8811.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-consumer-user-8801/smbms-consumer-user-801.iml" filepath="$PROJECT_DIR$/smbms-consumer-user-8801/smbms-consumer-user-801.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-dependencies/smbms-dependencies.iml" filepath="$PROJECT_DIR$/smbms-dependencies/smbms-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-eureka-7001/smbms-eureka-7001.iml" filepath="$PROJECT_DIR$/smbms-eureka-7001/smbms-eureka-7001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-provider-bill-8201/smbms-provider-bill-8201.iml" filepath="$PROJECT_DIR$/smbms-provider-bill-8201/smbms-provider-bill-8201.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-provider-pro-8101/smbms-provider-pro-8101.iml" filepath="$PROJECT_DIR$/smbms-provider-pro-8101/smbms-provider-pro-8101.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-provider-user-8001/smbms-provider-user-8001.iml" filepath="$PROJECT_DIR$/smbms-provider-user-8001/smbms-provider-user-8001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms-zuul-9527/smbms-zuul-9527.iml" filepath="$PROJECT_DIR$/smbms-zuul-9527/smbms-zuul-9527.iml" />
+    </modules>
+  </component>
+</project>

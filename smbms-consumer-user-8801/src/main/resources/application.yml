@@ -1,0 +1,27 @@
+#端口server:
+server:
+ port: 8801
+
+#发现eureka
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+#关闭严格的HTML5检查
+
+
+#LOGGING
+logging:
+  level:
+    com:
+      codeman:
+        smbms:
+          controller:
+            UserController_Consumer: debug
+spring:
+  application:
+    name: consumer-user
+  thymeleaf:
+    mode: LEGACYHTML5

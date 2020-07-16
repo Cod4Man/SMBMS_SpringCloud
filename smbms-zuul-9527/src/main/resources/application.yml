@@ -1,0 +1,44 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: smbms-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: smbms-zuul-gateway-9527
+    prefer-ip-address: true
+
+
+zuul:
+  prefix: /smbms             #设置统一的前缀
+  ignored-services: "*"  #设置忽略真实的服务名（*为全部，也可以自定义个数，用服务名即可）
+  routes:                            #匹配规则
+#    myzuul.serviceId: smbms-zuul-gateway
+#    myzuul.path: /zuul/**
+    service01:
+      serviceId: smbms-provider-user
+      path: /user/**
+      sensitiveHeaders: "*"
+    service02:
+      serviceId: smbms-provider-pro
+      path: /provider/**
+      sensitiveHeaders: "*"
+    service03:
+      serviceId: smbms-provider-bill
+      path: /bill/**
+      sensitiveHeaders: "*"
+#  sensitive-headers: "*"
+
+
+
+info:
+  app.name: smbms
+  company.name: www.codeman.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="consumer-user-8801">
+    <output-path>$PROJECT_DIR$/out/artifacts/consumer_user_8801</output-path>
+    <root id="archive" name="consumer-user-8801.war">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/smbms-consumer-user-8801/src/main/java/com/codeman/smbms/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

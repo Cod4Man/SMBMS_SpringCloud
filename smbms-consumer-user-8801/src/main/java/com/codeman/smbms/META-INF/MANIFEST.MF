@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.codeman.smbms.Consumer_User_App_8801
+

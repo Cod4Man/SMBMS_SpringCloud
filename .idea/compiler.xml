@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="smbms-api" />
+        <module name="smbms-consumer-bill-8821" />
+        <module name="smbms-consumer-pro-8811" />
+        <module name="smbms-consumer-user-801" />
+        <module name="smbms-eureka-7001" />
+        <module name="smbms-provider-bill-8201" />
+        <module name="smbms-provider-pro-8101" />
+        <module name="smbms-provider-user-8001" />
+        <module name="smbms-zuul-9527" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="smbms-api" target="1.8" />
+      <module name="smbms-consumer-bill-8821" target="1.8" />
+      <module name="smbms-consumer-pro-8811" target="1.8" />
+      <module name="smbms-consumer-role-8811" target="1.8" />
+      <module name="smbms-consumer-user-801" target="1.8" />
+      <module name="smbms-dependencies" target="1.8" />
+      <module name="smbms-eureka-7001" target="1.8" />
+      <module name="smbms-provider-bill-8201" target="1.8" />
+      <module name="smbms-provider-pro-8101" target="1.8" />
+      <module name="smbms-provider-role-8101" target="1.8" />
+      <module name="smbms-provider-user-8001" target="1.8" />
+      <module name="smbms-zuul-9527" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
