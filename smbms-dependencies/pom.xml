@@ -32,7 +32,7 @@
         <springboot.version>1.5.9.RELEASE</springboot.version>
         <mybatis.start.version>1.3.0</mybatis.start.version>
         <druid.version>1.1.2</druid.version>
-        <mysql.java.version>5.1.38</mysql.java.version>
+        <mysql.java.version>8.0.16</mysql.java.version>
     </properties>
 
     <dependencyManagement>
